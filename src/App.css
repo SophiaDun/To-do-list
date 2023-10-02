@@ -1,0 +1,70 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+@keyframes colorChange {
+  0% {
+    background-color: rgb(241, 170, 205);
+  }
+  50% {
+    background-color: rgb(173, 181, 254);
+  }
+  100% {
+    background-color: rgb(165, 232, 173);
+  }
+}
+
+.logo {
+padding: 30px;
+ 
+  background-color: rgb(255, 255, 255);
+  animation: colorChange 10s infinite;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+.button {
+  background-color: rgb(173, 181, 254);
+  animation: colorChange 10s infinite;
+  border-color: none;
+border-radius: 100px;
+
+  
+}
+.button:hover{
+  background-color: rgb(9, 9, 13);
+  color: aliceblue;
+}
+
+
+.table1{
+  background-color: black;
+  padding: 100px;
+}
+
+.material-symbols-outlined {
+ 
+  font-variation-settings:
+  'FILL' 5,
+  'wght' 400,
+  'GRAD' 5,
+  'opsz' 266,
+ 
+}
+.row{
+  padding-top: 15px;
+}
+.kello{
+  border-radius: 100px;
+}
