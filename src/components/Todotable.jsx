@@ -1,5 +1,3 @@
-import React from "react";
-import './App.css';
 
 function Todotable (props){
 
@@ -8,10 +6,7 @@ function Todotable (props){
 <table className="table">
      
      <tbody>
-    <tr>
-     <th>Date</th>
-     <th>Description</th>
-    </tr>
+    
        {props.todos.map((todo, index) => (
         
          <tr key={index}>
@@ -19,6 +14,7 @@ function Todotable (props){
          
            <td>{todo.date}</td>
            <td>{todo.desc}</td>
+           <td>{todo.priority}</td>
            <td><button onClick={() => props.onDelete(index)}className="btn"type="button" value="-" ><span className="material-symbols-outlined">delete
            </span></button></td>
          </tr>

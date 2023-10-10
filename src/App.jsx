@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import './App.css';
-import Todolist from './Todolist';
-import Todotable from './Todotable';
+
+
+import Todolist from './components/Todolist';
+
 
 function App() {
 

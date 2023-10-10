@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import Todotable from './Todotable';
-import './App.css';
+import React, { useState } from 'react';
+import Grid from "../components/grid";
+import '../App.css';
 
 function Todolist (){
-    const [show, setShow] = useState(false); 
+
     const [todo, setTodo] = useState({ desc: '', date: '' });
     const [todos, setTodos] = useState([]);
   
@@ -14,9 +14,9 @@ function Todolist (){
     const addTodo = (e) => {
       e.preventDefault();
       setTodos([...todos, todo]);
-      setShow(true);
+   
     };
-   const deleteItems =(index) => {
+   const deleteByIndex =(index) => {
     const deletedTodos = todos.filter((todo, i) => i !== index)
     setTodos(deletedTodos);
    };
@@ -35,7 +35,7 @@ function Todolist (){
 
         <div className="row">
 
-          <div className="col-md-4">
+          <div className="col-md-2">
             <input
               className="form-control"
               type="date"
@@ -45,7 +45,7 @@ function Todolist (){
             />
           </div>
 
-          <div className="col-md-6">
+          <div className="col-md-4">
             <input
               className="form-control"
               type="text"
@@ -56,16 +56,25 @@ function Todolist (){
             />
          </div>
 
+         <div className="col-md-4">
+            <input
+              className="form-control"
+              type="text"
+              name="priority"
+              value={todo.priority}
+              onChange={inputChanged}
+              placeholder='low / medium / high'
+            />
+         </div>
+
           <div className="col-md-2">
           <button className="button" type="submit" value="+" >+</button>
+         
         </div>
 
         </div>
       </form>
-      {show && (
-       
-     < Todotable todos={todos} onDelete={deleteItems}/>
-        )}
+      <Grid data={todos} deleteByIndex={deleteByIndex}/>  
 </>
     );
 }
