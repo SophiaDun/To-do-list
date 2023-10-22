@@ -56,7 +56,7 @@ function Grid(props){
 
     <div className="ag-theme-material"
     
-    style={{height: '300px', width: '100%', margin: 'auto'}} >
+    style={{height: '500px', width: 'auto', margin: 'auto'}} >
          
     <AgGridReact 
     

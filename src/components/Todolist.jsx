@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import Grid from "../components/grid";
 import '../App.css';
 
+import TextField from '@mui/material/TextField';
+import DateSelector from './datepicker';
+
+
 function Todolist (){
 
     const [todo, setTodo] = useState({ desc: '', date: '' ,priority:''});
@@ -9,6 +13,9 @@ function Todolist (){
   
     const inputChanged = (e) => {
       setTodo({ ...todo, [e.target.name]: e.target.value });
+    };
+    const DateChange = (date) => {
+      setTodo({ ...todo, date });
     };
   
     const addTodo = (e) => {
@@ -35,35 +42,27 @@ function Todolist (){
 
         <div className="row">
 
-          <div className="col-md-2">
-            <input
-              className="form-control"
-              type="date"
-              name="date"
-              value={todo.date}
-              onChange={inputChanged}
-            />
+          <div className="col-md-4">
+          <DateSelector selectedDate={todo.date} onDateChange={DateChange} />
           </div>
 
-          <div className="col-md-4">
-            <input
-              className="form-control"
-              type="text"
-              name="desc"
-              value={todo.desc}
-              onChange={inputChanged}
-              placeholder='Insert description'
-            />
+          <div className="col-md-3">
+            <TextField
+              label="Description"
+              variant="standard"
+              name="desc" value={todo.desc}
+              onChange={inputChanged}/>
+           
          </div>
 
-         <div className="col-md-4">
-            <input
-              className="form-control"
-              type="text"
+         <div className="col-md-3">
+            <TextField
+          label="low / medium / high"
+          variant="standard"
               name="priority"
               value={todo.priority}
               onChange={inputChanged}
-              placeholder='low / medium / high'
+          
             />
          </div>
 
@@ -74,7 +73,10 @@ function Todolist (){
 
         </div>
       </form>
-      <Grid data={todos} deleteByIndex={deleteByIndex}/>  
+      <Grid data={todos} deleteByIndex={deleteByIndex}/> 
+     
+
+  
 </>
     );
 }
