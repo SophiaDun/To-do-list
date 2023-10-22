@@ -2,6 +2,7 @@ import { AgGridReact } from "ag-grid-react";
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-material.css';
 import { useRef } from "react";
+import dayjs from 'dayjs';
 
 function Grid(props){
 
@@ -11,9 +12,17 @@ function Grid(props){
     
     const gridRef= useRef(); //gridRef:llä on yksi current property
     
+    const dateFormatter = (props) => {
+    return dayjs(props.value).format('DD.MM.YYYY');
+    };
+    
+    
     //colums
+  
     const columns = [
-        { headerName: 'Date', field: 'date', sortable: true, filter: true ,floatingFilter:true},
+     
+      { headerName: 'Date', field: 'date', sortable: true, filter: true, floatingFilter: true, valueFormatter: dateFormatter }
+      ,
         { headerName: 'Description', field: 'desc', sortable: true, filter: true ,floatingFilter:true},
         { 
             headerName: 'Priority', 
@@ -36,8 +45,9 @@ function Grid(props){
               return { color };
             }
           }
+          
       ];
-      
+     
     
     const deleteSelected =()=>{
         if(gridRef.current.getSelectedNodes().length==0){ //joku rivi tai rivit valittu
@@ -64,7 +74,7 @@ function Grid(props){
     columnDefs={columns}
     rowSelection="single"
     animateRows="true"
-    onGridReady={params => gridRef.current = params.api}
+    onGridReady={props => gridRef.current = props.api}
     >
     
     </AgGridReact>
@@ -78,4 +88,5 @@ function Grid(props){
     );
     
     }
+    
     export default Grid;
