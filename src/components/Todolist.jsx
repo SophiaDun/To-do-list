@@ -4,7 +4,7 @@ import '../App.css';
 
 function Todolist (){
 
-    const [todo, setTodo] = useState({ desc: '', date: '' });
+    const [todo, setTodo] = useState({ desc: '', date: '' ,priority:''});
     const [todos, setTodos] = useState([]);
   
     const inputChanged = (e) => {
