@@ -1,6 +1,7 @@
 
 
-import Todolist from './components/Todolist';
+
+import TabApp from './components/Menu';
 
 
 function App() {
@@ -8,7 +9,8 @@ function App() {
 
   return (
     <>
-    <Todolist/>
+    <TabApp/>
+   
      </>
   )
 }

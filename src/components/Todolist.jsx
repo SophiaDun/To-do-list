@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Grid from "../components/grid";
 import '../App.css';
 import TextField from '@mui/material/TextField';
-import DateSelector from '../components/datepicker'; 
+import DateSelector from '../components/datepicker';
+
 
 function Todolist() {
     const [todo, setTodo] = useState({ desc: '', date: '', priority: '' });
@@ -29,15 +30,15 @@ function Todolist() {
 
     return (
         <>
+
             <div className="logo">
-                <span className="material-symbols-outlined">stylus_note</span>
-                <h1>Todo List</h1>
+                <h2>T O D O L I S T</h2>
             </div>
 
             <form onSubmit={addTodo}>
                 <div className="row">
                     <div className="col-md-4">
-                  
+
                         <DateSelector selectedDate={todo.date} DateChange={handleDateChange} />
                     </div>
                     <div className="col-md-3">

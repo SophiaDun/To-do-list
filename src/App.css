@@ -5,15 +5,52 @@
   text-align: center;
 }
 
-
+.thebox{
+  padding: 30px;
+ margin-top: 40px;
+  background-color: rgb(255, 255, 255);
+  animation: colorChange 10s infinite;
+  border-radius: 1000px;
+  width:500px;
+  height: 500px;
+}
 
 .card {
   padding: 2em;
 }
 
-.read-the-docs {
-  color: #888;
+
+.box {
+  align-self: flex-end;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+
+padding-top: 70px;
+  margin: 0 auto 0 auto;
+padding-right: 50px;
+  transform-origin: bottom;
+  width:500px;
+  height: 500px;
 }
+.bounce {
+  
+
+  animation-name: bounce;
+  animation-timing-function: ease;
+}
+@keyframes bounce {
+  0%   { transform: scale(1,1)      translateY(0); }
+  10%  { transform: scale(1.1,.9)   translateY(0); }
+  30%  { transform: scale(.9,1.1)   translateY(-100px); }
+  50%  { transform: scale(1.05,.95) translateY(0); }
+  57%  { transform: scale(1,1)      translateY(-7px); }
+  64%  { transform: scale(1,1)      translateY(0); }
+  100% { transform: scale(1,1)      translateY(0); }
+}
+
+
+
+
 @keyframes colorChange {
   0% {
     background-color: rgb(241, 170, 205);
@@ -26,9 +63,20 @@
   }
 }
 
-.logo {
-padding: 30px;
- 
+.banner{
+  padding-bottom: 10px;
+}
+h2{
+
+  font-weight: bold;
+
+}
+
+.logo  {
+
+  padding: 30px;
+
+
   background-color: rgb(255, 255, 255);
   animation: colorChange 10s infinite;
   border-top-left-radius: 30px;
