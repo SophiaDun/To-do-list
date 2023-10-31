@@ -27,6 +27,9 @@ function Todolist() {
         const deletedTodos = todos.filter((todo, i) => i !== index);
         setTodos(deletedTodos);
     };
+    const clearTodos = () => {
+        setTodos([]);
+    };
 
     return (
         <>
@@ -60,11 +63,11 @@ function Todolist() {
                         />
                     </div>
                     <div className="col-md-2">
-                        <button className="button" type="submit" value="+">+</button>
+                        <button className="button" type="submit" value="+"><span class="material-symbols-outlined"> heart_plus</span>Add</button>
                     </div>
                 </div>
             </form>
-            <Grid data={todos} deleteByIndex={deleteByIndex} />
+            <Grid data={todos} deleteByIndex={deleteByIndex} clearTodos={clearTodos} />
         </>
     );
 }

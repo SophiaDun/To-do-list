@@ -63,6 +63,19 @@ padding-right: 50px;
   }
 }
 
+
+@keyframes colorChange2 {
+  0% {
+   color: rgb(227, 157, 192);
+  }
+  50% {
+    color: rgb(151, 159, 227);
+  }
+  100% {
+  color: rgb(135, 197, 142);
+  }
+}
+
 .banner{
   padding-bottom: 10px;
 }
@@ -87,6 +100,17 @@ h2{
   animation: colorChange 10s infinite;
   border-color: none;
 border-radius: 100px;
+
+  
+}
+.button2 {
+  animation: colorChange2 10s infinite;
+  background-color: rgb(255, 255, 255);
+
+border-color: none;
+font-size: larger;
+margin: 7px;
+
 
   
 }
